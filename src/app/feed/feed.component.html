@@ -1,0 +1,50 @@
+
+<nav class="navbar">
+    <div class="navbar-left">
+      <span class="app-name">PlantApp</span>
+    </div>
+    <div class="navbar-center">
+      <a routerLink="/home" class="nav-link">Identificar</a>
+      <a routerLink="/feed" class="nav-link">Feed</a>
+    </div>
+    <div class="navbar-right">
+      <a routerLink="/profile" class="nav-link">Mi Perfil</a>
+    </div>
+  </nav>
+  <div class="content">
+
+
+    <div class="feed-container">
+        <div *ngFor="let post of posts" class="plant-card">
+
+          <!-- Nombre científico y común -->
+          <div class="publisher">
+            <h3>Publicado por: {{ post.username }}</h3>
+          </div>
+
+          <!-- Imagen de la planta -->
+          <img class="plant-image" [src]="post.image" alt="Imagen de la planta" />
+      
+          <!-- Nombre científico y común -->
+          <div class="plant-names">
+            <h2>Nombre científico: {{ post.scientificName }}</h2>
+            <h3>Nombre común: {{ post.commonName }}</h3>
+          </div>
+      
+          <!-- Imágenes similares -->
+          <div class="similar-images">
+            <h4>Imagen Similar:</h4>
+            <img class="similar-image" [src]="post.similarImage" alt="Imagen similar" />
+          </div>
+      
+          <!-- Descripción -->
+          <p>{{ post.description }}</p>
+          <a [href]="post.reference" target="_blank">Fuente: {{ post.reference }}</a>
+        </div>
+      </div>
+      
+
+
+
+<router-outlet></router-outlet>
+</div>

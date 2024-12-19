@@ -1,0 +1,308 @@
+/* Variables de colores */
+:root {
+    --main-bg: linear-gradient(to bottom, #78d780, #d8e3dc); /* Beige claro */
+    --primary-text: #5A4533; /* Marrón oscuro */
+    --secondary-text: #8B6A50; /* Marrón medio */
+    --secondary-bg: #E6E0DB; /* Gris suave */
+    --border-color: #C1B7AD; /* Gris oscuro */
+  }
+  
+ 
+  body {
+    background-color: var(--main-bg);
+    color: var(--primary-text);
+    font-family: 'Georgia', serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .navbar {
+    background-color: var(--main-bg);
+    border-bottom: 1px solid var(--border-color);
+  }
+  
+  .nav-links li a {
+    color: var(--primary-text);
+    text-decoration: none;
+  }
+  
+  .featured-image {
+    border: 1px solid var(--border-color);
+  }
+  
+  .read-more {
+    color: var(--secondary-text);
+    text-decoration: underline;
+    font-weight: bold;
+  }
+  
+  button {
+    background-color: var(--secondary-bg);
+    color: var(--primary-text);
+    border: 1px solid var(--border-color);
+    padding: 10px 15px;
+    font-size: 14px;
+    cursor: pointer;
+  }
+  
+  mat-card {
+    margin: 20px;
+    max-width: 600px;
+  }
+  
+  .similar-images {
+    margin-top: 10px;
+  }
+  
+  .images-container {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+  
+  .images-container img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 5px;
+  }
+  
+  .plant-info {
+    padding: 20px;
+    
+    max-width: 600px;
+    margin: 20px auto;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .plant-image {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+  }
+  
+  .plant-names {
+    margin-top: 15px;
+  }
+  
+  .plant-names h2 {
+    margin: 0;
+    font-size: 1.5rem;
+    color: #333;
+  }
+  
+  .plant-names h3 {
+    margin: 5px 0;
+    font-size: 1.1rem;
+    color: #777;
+  }
+  
+  .similar-images {
+    margin-top: 20px;
+  }
+  
+  .images-container {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+  
+  .images-container img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 5px;
+  }
+  
+  .tabs {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+    border-bottom: 2px solid #ccc;
+  }
+  
+  .tab {
+    padding: 10px 20px;
+    cursor: pointer;
+    font-weight: bold;
+  }
+  
+  .tab.active {
+    border-bottom: 2px solid #007bff;
+    color: #007bff;
+  }
+  
+  .tab-content {
+    margin-top: 20px;
+  }
+  
+  .tab-content a {
+    display: inline-block;
+    margin-top: 10px;
+    color: #007bff;
+    text-decoration: none;
+  }
+  
+  .tab-content a:hover {
+    text-decoration: underline;
+  }
+
+  .post-button {
+    background-color: #28a745; /* Verde agradable */
+    color: white;
+    border: none;
+    border-radius: 20px;
+    padding: 15px 30px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .post-button:hover {
+    background-color: #218838; /* Un verde más oscuro */
+  }
+
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #0c6234;
+    color: white;
+    padding: 10px 20px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+  
+  .navbar-left .app-name {
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  
+  .navbar-center {
+    display: flex;
+    gap: 20px;
+  }
+  
+  .navbar-right {
+    display: flex;
+  }
+  
+  .nav-link {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+  }
+  
+  .nav-link:hover {
+    background-color: #10743F;
+  }
+
+  /* Estilo para el contenedor de subir archivo -----------------------------------------------------------------------------*/
+.file-upload-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 80vh;
+  text-align: center;
+}
+
+#file-upload {
+  display: none; /* Oculta el input real */
+}
+
+.file-upload-label {
+  background-color: #4caf50;
+  color: white;
+  padding: 15px 30px;
+  font-size: 18px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.file-upload-label:hover {
+  background-color: #45a049;
+}
+
+/* Botones */
+.post-button,
+.reset-button {
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 25px;
+  font-size: 18px;
+  cursor: pointer;
+  margin: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.post-button:hover,
+.reset-button:hover {
+  background-color: #45a049;
+}
+
+.content {
+  background-image: url('../../assets/home.jpg'); /* Ruta de tu imagen */
+  background-attachment: fixed;
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  
+}
+
+/* Plant info */
+.plant-info {
+  text-align: center;
+}
+
+.plant-image {
+  width: 100%;
+  max-width: 300px;
+  margin: 20px auto;
+  display: block;
+}
+
+/* Tabs */
+.tabs {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.tab {
+  margin: 0 10px;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+}
+
+.tab.active {
+  border-bottom: 2px solid #4caf50;
+  font-weight: bold;
+}
+
+/* Botones adicionales */
+.button-container {
+  display: flex;
+  justify-content: center;
+}
+
+  
+  
+  
+
+
+
+
+
+  

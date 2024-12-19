@@ -1,0 +1,26 @@
+<mat-card>
+    <img mat-card-image [src]="plant?.imageUrl" alt="Imagen de la planta" />
+    <mat-card-header>
+      <mat-card-title>{{ plant?.scientificName }}</mat-card-title>
+      <mat-card-subtitle>{{ plant?.commonName }}</mat-card-subtitle>
+    </mat-card-header>
+  
+    <mat-card-content>
+      <div class="similar-images">
+        <h4>Imágenes Similares:</h4>
+        <div class="images-container">
+          <img *ngFor="let img of plant?.similarImages" [src]="img.url" alt="Similar Image" />
+        </div>
+      </div>
+      <mat-tab-group>
+        <mat-tab label="Descripción">
+          <p>{{ plant?.description }}</p>
+          <a [href]="plant?.referenceUrl" target="_blank">Más información</a>
+        </mat-tab>
+        <mat-tab label="Cuidados">
+          <p>{{ plant?.careInfo }}</p>
+        </mat-tab>
+      </mat-tab-group>
+    </mat-card-content>
+  </mat-card>
+  

@@ -1,0 +1,71 @@
+
+<nav class="navbar">
+  <div class="navbar-left">
+    <span class="app-name">PlantApp</span>
+  </div>
+  <div class="navbar-center">
+    <a routerLink="/home" class="nav-link">Identificar</a>
+    <a routerLink="/feed" class="nav-link">Feed</a>
+  </div>
+  <div class="navbar-right">
+    <a routerLink="/profile" class="nav-link">Mi Perfil</a>
+  </div>
+</nav>
+
+<div class="content">
+  <!-- Botón para cargar archivo -->
+  <div *ngIf="!plantInfo" class="file-upload-container">
+    <input type="file" (change)="onFileSelected($event)" accept="image/*" id="file-upload" />
+    <label for="file-upload" class="file-upload-label">
+      Cargar una imagen
+    </label>
+  </div>
+
+  <!-- Tarjeta de información de la planta -->
+  <div *ngIf="plantInfo" class="plant-info">
+    <!-- Imagen de la planta -->
+    <img class="plant-image" [src]="plantInfo?.imageUrl" alt="Imagen de la planta" />
+
+    <!-- Nombre científico y común -->
+    <div class="plant-names">
+      <h2>Nombre científico: {{ plantInfo?.scientificName }}</h2>
+      <h3>Nombre común: {{ plantInfo?.commonName }}</h3>
+    </div>
+
+    <!-- Imágenes similares -->
+    <div class="similar-images">
+      <h4>Imágenes Similares:</h4>
+      <div class="images-container">
+        <img class="plant-image" [src]="plantInfo?.similarImages" />
+      </div>
+    </div>
+
+    <!-- Pestañas para descripción y cuidados -->
+    <div class="tabs">
+      <div class="tab" (click)="activeTab = 'description'" [class.active]="activeTab === 'description'">
+        Descripción
+      </div>
+      <div class="tab" (click)="activeTab = 'care'" [class.active]="activeTab === 'care'">
+        Cuidados
+      </div>
+    </div>
+
+    <div class="tab-content">
+      <div *ngIf="activeTab === 'description'">
+        <p>{{ plantInfo?.description }}</p>
+        <a [href]="plantInfo?.referenceUrl" target="_blank">Fuente : {{ plantInfo?.referenceUrl }}</a>
+      </div>
+      <div *ngIf="activeTab === 'care'">
+        <p>{{ plantInfo?.careInfo }}</p>
+      </div>
+    </div>
+
+    <!-- Botones -->
+    <div class="button-container">
+      <button class="post-button" (click)="postPlantInfo()">Postear</button>
+      <button class="reset-button" (click)="resetPlantInfo()">Buscar otra planta</button>
+    </div>
+  </div>
+
+  <router-outlet></router-outlet>
+</div>
